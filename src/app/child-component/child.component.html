@@ -1,0 +1,14 @@
+<div style="border: 2px solid blue">
+  <header>Child Component</header>
+  <br />
+  <div>
+    <label for="childSender">Text to send to parent:</label>
+    <br />
+    <input #sendToParentVal id="childSender" type="text" placeholder="SEND FROM CHILD"/>
+    <br />
+    <button (click)="sendToParent(sendToParentVal.value)">
+      Click to send to parent
+    </button>
+  </div>
+  <h3>Received input from parent component: {{receivedFromParent}}</h3>
+</div>

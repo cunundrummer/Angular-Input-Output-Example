@@ -1,0 +1,40 @@
+<div style="border: 1px solid black">
+  <fieldset>
+    <legend>
+      Parent Component
+    </legend>
+
+    <div>
+      <label for="send">Text to send</label>
+      <br />
+      <input #sender id="send" type="text" placeholder="SEND FROM PARENT">
+      <br />
+      <button (click)="sendToChild(sender.value)">
+        Click to send to child
+      </button>
+    </div>
+
+    <h3>Received output from child component: {{outputFromChild}}</h3>
+
+  </fieldset>
+
+  <hr>
+
+  <fieldset>
+    <legend>
+      Child container inside parent component
+    </legend>
+
+    <app-child-component
+      (toParent)="showOutputFromChild($event)"
+      [receivedFromParent]="inputForChild">
+    </app-child-component>
+
+  </fieldset>
+
+</div>
+
+
+
+
+
